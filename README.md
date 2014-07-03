@@ -3,6 +3,8 @@ ewide.com.au
 
 This site is served via [Github Pages](http://liquidvisual.github.io/ewide.com.au).
 
+    Grunt Serve
+
 Caution:
 
 * Not yet ready to go live, still needs testing. Will be ready after 5th.
