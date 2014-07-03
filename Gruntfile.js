@@ -2,7 +2,9 @@ module.exports = function (grunt) {
 
    // load time-grunt and all grunt plugins found in the package.json
    require('time-grunt')(grunt);
-   require('jit-grunt')(grunt);
+   require('jit-grunt')(grunt, {
+    buildcontrol: 'grunt-build-control'
+   });
 
    grunt.initConfig({
       //-----------------------------------------------------
@@ -35,7 +37,7 @@ module.exports = function (grunt) {
             command: "jekyll build --source <%= config.app %>  --destination .tmp"
          },
          jekyllBuild: {
-            command: "jekyll build --source <%= config.app %>  --destination <%= config.dist %> --config <%= config.app %>/_config.deploy.yml"
+            command: "jekyll build --source <%= config.app %>  --destination <%= config.dist %> --config <%= config.app %>/_config.build.yml"
          }
       },
       //-----------------------------------------------------
@@ -73,16 +75,23 @@ module.exports = function (grunt) {
       // SASS - Compiles sass only, leaves .css alone
       //-----------------------------------------------------
       sass: {
-        options: {
-            //outputStyle: 'compressed'
-        },
         temp: {
             files: {
                 '.tmp/css/main.css' : '<%= config.app %>/_scss/main.scss',
                 '.tmp/css/liquidvisual.css' : '<%= config.app %>/_scss/liquidvisual/liquidvisual.scss',
                 '.tmp/css/foundation.css' : '<%= config.app %>/_scss/foundation/foundation.scss'
             }
+        },
+        dist: {
+          options: {
+            outputStyle: 'compressed'
+          },
+          files: {
+              '<%= config.dist %>/css/main.css' : '<%= config.app %>/_scss/main.scss',
+              '<%= config.dist %>/css/liquidvisual.css' : '<%= config.app %>/_scss/liquidvisual/liquidvisual.scss',
+              '<%= config.dist %>/foundation.css' : '<%= config.app %>/_scss/foundation/foundation.scss'
           }
+        }
       },
       //-----------------------------------------------------
       // A. CONNECT
