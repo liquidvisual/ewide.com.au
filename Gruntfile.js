@@ -3,7 +3,7 @@ module.exports = function (grunt) {
    // load time-grunt and all grunt plugins found in the package.json
    require('time-grunt')(grunt);
    require('jit-grunt')(grunt, {
-    buildcontrol: 'grunt-build-control'
+    buildcontrol: 'grunt-build-control' // plugin can't be resolved in automatic mapping
    });
 
    grunt.initConfig({
