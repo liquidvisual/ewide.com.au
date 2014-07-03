@@ -89,7 +89,7 @@ module.exports = function (grunt) {
           files: {
               '<%= config.dist %>/css/main.css' : '<%= config.app %>/_scss/main.scss',
               '<%= config.dist %>/css/liquidvisual.css' : '<%= config.app %>/_scss/liquidvisual/liquidvisual.scss',
-              '<%= config.dist %>/foundation.css' : '<%= config.app %>/_scss/foundation/foundation.scss'
+              '<%= config.dist %>/css/foundation.css' : '<%= config.app %>/_scss/foundation/foundation.scss'
           }
         }
       },
