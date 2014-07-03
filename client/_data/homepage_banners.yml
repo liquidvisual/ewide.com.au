@@ -1,0 +1,7 @@
+# Configure Homepage Banners here
+
+ - title: '<span class="part-1">Your Next Website</span><span class="part-2">Built Right</span><span class="part-3">with time and care</span>'
+   description:
+   img_path: /img/content/banner-3.jpg
+   link_url: "#contact"
+   link_label: Get in touch

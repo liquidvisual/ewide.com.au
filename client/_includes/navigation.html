@@ -1,0 +1,31 @@
+<section id="lv-topbar" class="lv-topbar">
+
+    <!-- Topbar Header -->
+    <div class="lv-topbar-header">
+        <a href="{% if site.baseurl == '' %}/{% else %}{{ site.baseurl }}{% endif %}" class="lv-logo"><img src="{{site.baseurl}}/img/content/mobile-logo@2x.png" alt="Mobile Logo"><span class="lv-logo-text"></span></a>
+        <a href="#" class="lv-menu-icon"><span class="lv-menu-icon-text">Menu</span></a>
+        <a href="#" class="lv-search-icon"></a>
+    </div> <!-- .lv-topbar-header -->
+
+    <!-- Topbar Body -->
+    <div class="lv-topbar-body">
+        <ul class="lv-center-for-medium-up lv-right-for-large-up">
+            <!-- ** Home ** -->
+            <li class="lv-home {% if page.url == "/" %}active{% endif %}"><a href="{% if site.baseurl == '' %}/{% else %}{{ site.baseurl }}{% endif %}"><i class="fi-home"></i></a></li>
+            <!-- ** Other ** -->
+            {% for node in site.data.settings.primary_navigation %}
+                <li class="{% if node.url == page.url %}active{% endif %} {% if node.second_level %}has-dropdown{% endif %}">
+                    <a href="{{ node.url | prepend: site.baseurl }}"><i class="{{ node.icon }}"></i> {{ node.title }}</a>
+                    {% if node.second_level %}
+                        <ul class="lv-dropdown">
+                            {% for second_level_item in site.data.products %}
+                                <li><a href="{{ second_level_item.url | prepend: site.baseurl }}">{{ second_level_item.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div> <!-- .lv-topbar-body -->
+
+</section> <!-- .lv-topbar -->

@@ -1,0 +1,17 @@
+<!-- Top Section -->
+<section class="top-section">
+   <div class="row">
+      <div class="columns">
+         {% include social_networks.html %}
+      </div> <!-- .columns -->
+   </div> <!-- .row -->
+</section> <!-- .top-section -->
+
+<!-- Bottom Section -->
+<section class="bottom-section">
+   <div class="row">
+      <div class="medium-6 columns">
+         <a class="logo show-for-medium-up" href="{% if site.baseurl == '' %}/{% else %}{{ site.baseurl }}{% endif %}"><img width="190" src="{{site.baseurl}}/img/content/logo-2@2x.png" alt="Ewide"></a>
+      </div> <!-- .medium-6 -->
+   </div> <!-- .row -->
+</section> <!-- .bottom-section -->

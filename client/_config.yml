@@ -1,0 +1,9 @@
+# Site settings
+name: Ewide
+title: Training
+email: your-email@domain.com
+description: "Site description goes here"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
