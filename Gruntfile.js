@@ -13,8 +13,8 @@ module.exports = function (grunt) {
       config: {
          app: 'client',
          dist: 'dist',
-         port: '9999',
-         takanaOn: true, // see notes in 'Watch' 
+         port: '9292',
+         takanaOn: false, // see notes in 'Watch'
          git: 'git@github.com:liquidvisual/ewide.com.au.git'
       },
       //-----------------------------------------------------

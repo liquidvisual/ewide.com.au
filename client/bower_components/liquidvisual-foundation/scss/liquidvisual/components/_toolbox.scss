@@ -1,7 +1,7 @@
 /*
 	LIQUIDVISUAL TOOLBOX :: A Personal Framework
 
-	- updated: 29.06.14
+	- updated: 07.07.14
 	- liquidvisual.com
 	- licensed under MIT Open Source
 
@@ -13,13 +13,17 @@
 // Variables
 //-----------------------------------------------------------------
 
-$font-smoothing: true !default; // Override in F5 settings
-$primary-color: #158DB8 !default; // Override in F5 settings
+$body-bg: #fff !default;
+$font-smoothing: antialiased !default; // Override in F5 settings
+$primary-color: #008CBA !default; // Override in F5 settings
 $include-code-styles: true !default;
 $include-example-styles: true !default;
 $include-form-styles: true !default;
 $include-hr-styles: true !default;
 $include-snap-grid: true !default;
+$include-prevent-horizontal-scrolling: false !default;
+
+$table-thead-border-bottom: 2px solid #555 !default;
 
 //-----------------------------------------------------------------
 // Snap Grid
@@ -39,11 +43,21 @@ $include-snap-grid: true !default;
 // Font Smoothing
 //-----------------------------------------------------------------
 
-@if $font-smoothing {
+@if $font-smoothing == "antialiased" {
 	body {
 		 -webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		         font-smoothing: antialised;
+	}
+}
+
+//-----------------------------------------------------------------
+// Prevent Horizontal Scrolling
+//-----------------------------------------------------------------
+
+@if $include-prevent-horizontal-scrolling {
+	body {
+		overflow-x: hidden;
 	}
 }
 
@@ -83,9 +97,11 @@ $include-snap-grid: true !default;
 
 @if $include-hr-styles {
 	hr {
-		background: white;
-		box-shadow: inset 0 3px 5px -4px rgba(0, 0, 0, 0.26);
+		background: $body-bg;
+		box-shadow: 0 3px 5px -4px rgba(0, 0, 0, 0.26);
 		height: 10px;
+		border-top: 0;
+		border-bottom: 1px solid #DDDDDD;
 	}
 }
 
@@ -127,4 +143,18 @@ $include-snap-grid: true !default;
 		outline: none;
 		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIzMCUiIHN0b3AtY29sb3I9IiNmZWZlZmUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZjRmNGY0IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
 	}
+}
+
+//-----------------------------------------------------------------
+// Tables
+//-----------------------------------------------------------------
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table thead,
+table tfoot {
+	border-bottom: $table-thead-border-bottom;
 }

@@ -1,7 +1,7 @@
 /*
 	LIQUIDVISUAL BUTTONS :: A Personal Framework
 
-	- updated: 29.06.14
+	- updated: 07.07.14
 	- liquidvisual.com
 	- licensed under MIT Open Source
 */
@@ -11,28 +11,51 @@
 // These can be overidden via Foundation settings
 //-----------------------------------------------------------------
 
+// Foundation defaults
+$primary-color: #008CBA !default;
+$secondary-color: #e7e7e7 !default;
+$alert-color: #f04124 !default;
+$success-color: #43AC6A !default;
+$warning-color: #f08a24 !default;
+$info-color: #a0d3e8 !default;
+
+// liquidvisual
 $button-radius: 5px !default;
 $button-round: 1000px !default;
-$button-bg: #008BB8 !default;
+$button-bg: $primary-color !default;
 $button-bg-hover: lighten($button-bg, 5%) !default;
 $button-bg-active: darken($button-bg-hover, 2%) !default;
 
 //-----------------------------------------------------------------
-// Button
+// Button States
 //-----------------------------------------------------------------
 
 .button:active:not(.disabled) {
-	background: $button-bg-active;
 	box-shadow: inset 0px 2px 5px rgba(0,0,0,0.2);
-	text-shadow: rgba(255,255,255,0.25) 0px 1px 0;
+	// text-shadow: rgba(255,255,255,0.25) 0px 1px 0;
+}
+
+.button:hover:not(.disabled) {
+    background: $button-bg-hover;
+}
+
+.button.success:hover:not(.disabled) {
+    background: lighten($success-color, 5%);
+}
+
+.button.alert:hover:not(.disabled) {
+    background: lighten($alert-color, 5%);
+}
+
+.button.secondary:hover:not(.disabled) {
+    background: lighten($secondary-color, 5%);
 }
 
 //=============================================
 // Button - Styles
 //=============================================
 
-.button
-{
+.button {
 	&.cellshade {
 		border: 1px solid darken(desaturate($button-bg, 10%), 15%);
 	}
@@ -80,7 +103,6 @@ $button-bg-active: darken($button-bg-hover, 2%) !default;
 	}
 
 	&.gradient.candy::after {
-//		top: 1px;
 		border-top: 1px solid rgba(255, 255, 255, 0.6);
 	}
 
@@ -103,10 +125,7 @@ $button-bg-active: darken($button-bg-hover, 2%) !default;
 	}
 
 	&.disabled {
-		background: lighten(desaturate($button-bg, 80%), 35%);
-		border-color: darken(#98A8AB, 15%);
-		cursor: not-allowed;
-		// color: darken($button-font-color, 4%);
+        cursor: not-allowed;
 	}
 
 	&.flat {

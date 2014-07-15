@@ -2,7 +2,7 @@
 /*
     MAIN.CSS
 
-    - Last updated: 03.07.14
+    - Last updated: 08.07.14
     - liquidvisual.com
     - Licensed under MIT Open Source
 */
@@ -12,12 +12,6 @@
 
 body {
 	overflow-x: hidden;
-
-	//  -webkit-font-smoothing: antialiased;
-	// -moz-osx-font-smoothing: grayscale;
-	//          font-smoothing: antialised;
-
-	// display: none;
 }
 
 //-----------------------------------------------------------------
@@ -36,56 +30,41 @@ body {
 // Header
 //-----------------------------------------------------------------
 
-.header
-{
+.header {
 	position: relative;
 	z-index: 100;
-	background: #515863;
-}
+	background: #424953; //#515863;
 
-.header .logo
-{
-	z-index: 600;
-}
+	.logo {
+		z-index: 600;
+	}
 
-@media #{$medium-up} {
-	.header
-	{
+	@media #{$medium-up} {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		background: none;
+
+		.top-section {
+			position: relative;
+			top: 23px;
+			padding-top: 15px;
+		}
+
+		.bottom-section {
+			margin-top: -20px;
+		}
 	}
 
-	.header.frosted
-	{
-		background: rgba(255, 255, 255, .8);
-		padding-bottom: 20px;
-	}
+	@media #{$large-up} {
+		.top-section {
+			top: 0;
+		}
 
-	.header .top-section
-	{
-		position: relative;
-		top: 23px;
-		padding-top: 15px;
-	}
-
-	.header .bottom-section
-	{
-		margin-top: -20px;
-	}
-}
-
-@media #{$large-up} {
-	.header .top-section
-	{
-		top: 0;
-	}
-
-	.header .bottom-section
-	{
-		margin-top: 0;
+		.bottom-section {
+			margin-top: 0;
+		}
 	}
 }
 
@@ -93,60 +72,32 @@ body {
 // Navigation
 //-----------------------------------------------------------------
 
-.navigation
-{
-	// z-index: 100;
-	// font-family: 'Lato', sans-serif;
-	// font-size: 1.1em;
-}
+.navigation {
 
-.lv-super .lv-topbar
-{
-	// border-bottom: 1px solid #515863;
-}
-
-@media #{$medium-up} {
-	.navigation {
+	@media #{$medium-up} {
 		position: relative;
-		top: -47px;
-		// margin-top: -47px;
-		background: url(../img/ui/black-transparent.png);
+		top: -44px;
+		margin-bottom: -44px;
 		background: rgba(0, 0, 0, .5);
+
+		.lv-topbar a {
+			font-weight: bold;
+		}
 	}
 
-	.lv-super .lv-topbar {
-		background: none;
-	}
-
-	.lv-super .lv-topbar a {
-		color: white;
-		// font-weight: 400;
-		// border: none;
-		font-size: 1.1rem;
-	}
-
-	.lv-super .lv-topbar li a:hover
-	{
-		// background: none !important;
-		// color: #FF6E49;
-	}
-}
-
-@media #{$large-up} {
-	.navigation {
+	@media #{$large-up} {
 		position: absolute;
-		top: 90px;
-		// margin-top: 0;
+		top: 60px;
 		background: none;
-	}
-
-	.lv-super .lv-topbar a {
-		color: #222;
-	}
-
-	.lv-super .lv-topbar {
-		margin-top: -32px;
-		// background: none;
+// refactor asap
+		.lv-topbar a:hover,
+		.lv-topbar a:active,
+		.lv-topbar li.active a,
+		.lv-topbar a:hover i,
+		.lv-topbar a:active i,
+		.lv-topbar li.active a i {
+			color: #555 !important;
+		}
 	}
 }
 
@@ -154,21 +105,30 @@ body {
 // Banner
 //-----------------------------------------------------------------
 
-.banner h1 .part-1,
-.banner h1 .part-2 {
-	text-transform: uppercase;
-	font-weight: 900;
+.banner {
+	position: relative;
+}
+
+.banner h1 {
+	margin-bottom: 1.250rem;
+}
+
+.banner h1 .part-2,
+.banner h1 .part-3 {
+	font-size: rem-calc(20);
 }
 
 .banner h1 .part-1,
 .banner h1 .part-2,
 .banner h1 .part-3 {
 	display: block;
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	font-weight: 900;
+	text-shadow: none;
+	// color: white;
 }
 
 .banner h1 .part-3 {
-	font-size: rem-calc(25);
+	// font-size: rem-calc(25);
 	margin-bottom: 30px;
 }
 
@@ -177,16 +137,25 @@ body {
 		margin-top: 5em;
 	}
 
-	.banner h1 {
-		font-size: rem-calc(75);
+	.banner h1 .part-1 {
+		font-size: rem-calc(56); //rem-calc(75);
+		// color: white;
 	}
 
+	.banner h1 .part-2,
 	.banner h1 .part-3 {
+		font-size: rem-calc(38);
+	}
+}
+
+@media #{$xlarge-up} {
+	.banner h1 .part-1 {
 		font-size: rem-calc(60);
 	}
 
-	.banner h1 {
-		line-height: 1.2;
+	.banner h1 .part-2,
+	.banner h1 .part-3 {
+		font-size: rem-calc(42);
 	}
 }
 
@@ -208,23 +177,18 @@ body {
 // Content
 //-----------------------------------------------------------------
 
-.leader-section {
-	// background: url(../img/content/banner-2.jpg) no-repeat center center;
-	// background-size: contain;
-	// padding: 40px 0;
-	// background-attachment: fixed;
-	// color: white;*/
-}
-
-.leader-section p
-{
-	// font-size: 1.1em;
-	// color: #222;
-}
-
-.welcome-section h2
-{
+.welcome-section h2 {
 	font-size: 1.5rem;
+}
+
+.leader-section {
+	background: #424953 url(../img/content/banner-55.jpgX) no-repeat;
+	color: white;
+	padding: 30px 0 20px 0;
+}
+
+.leader-section h2 {
+	color: white;
 }
 
 //-----------------------------------------------------------------
@@ -238,8 +202,23 @@ body {
 // Modules - Promo Tiles
 // ======================================== */
 
+body {
+
+}
+
 .promo-tiles {
+	// background: #222222;
+	// background: #424953;
+	// padding: 30px 0 0 0;
+	// background: url(../img/content/banner-55.jpg);
+}
+
+.promo-tiles img {
 	// margin-top: 30px;
+	background: #E3E3E3;
+	border-radius: 100%;
+	padding: 5px;
+	width: 120px;
 }
 
 .promo-tiles li {
@@ -252,10 +231,15 @@ body {
 	display: inline-block;
 }
 
+.promo-tiles h3 {
+	color: #FD6F4F;
+}
+
 .promo-tiles li a {
 	// background: white;
 	display: inline-block;
 	color: $body-font-color;
+	// color: white;
 	// box-shadow: 0 3px 5px -4px rgba(0, 0, 0, 0.5);
 }
 
@@ -335,27 +319,38 @@ body {
 	min-width: 30px;
 	min-height: 30px;
 	line-height: 30px;
-	color: white;
 	text-align: center;
+	color: #7E9B99;
+}
+
+.footer .social-networks li a {
+	color: white;
 }
 
 .social-networks .phone a {
 	line-height: 53px;
 	font-size: 1.4rem;
+	color: $body-bg;
 }
 
-.social-networks .linkedin a 	{ background: #105A98; }
-.social-networks .facebook a 	{ background: #3D5C97; }
-.social-networks .google-plus a { background: #CF3F35; }
-.social-networks .skype a 		{ background: #21B2EF; }
+// .social-networks .linkedin a 	{ background: #105A98; }
+// .social-networks .facebook a 	{ background: #3D5C97; }
+// .social-networks .google-plus a { background: #CF3F35; }
+// .social-networks .skype a 		{ background: #21B2EF; }
 
 @media #{$medium-up} {
 	.social-networks li {
 		display: inline-block;
 	}
 
+	.social-networks li a {
+		background: white;
+		border-radius: 100%;
+	}
+
 	.social-networks .phone a {
-		background: grey;
+		background: #555;
+		color: white;
 		border-radius: 50px;
 		padding: 0 10px;
 		margin-right: 5px;
@@ -364,7 +359,7 @@ body {
 	}
 
 	.social-networks li a:hover {
-		background: black;
+		background: #555;
 	}
 
 	.header .social-networks .phone {
@@ -405,6 +400,31 @@ body {
 // Special
 //-----------------------------------------------------------------
 
+// http://stackoverflow.com/questions/2610497/change-an-inputs-html5-placeholder-color-with-css
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #777;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #777;
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #777;
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #777;
+}
+
+.cursive {
+	font-family: 'Libre Baskerville', serif;
+}
+
+.cursive-2 {
+	font-family: 'Old Standard TT', serif;
+}
+
 .primary-color {
 	color: $primary-color;
 }
@@ -412,6 +432,42 @@ body {
 //-----------------------------------------------------------------
 // Themes
 //-----------------------------------------------------------------
+
+.phone a {
+	position: relative;
+	border-radius: 100px 100px 0 100px;
+}
+
+/* @group Quarter Pipes - a brightlabs invention (crowie) */
+.phone-tip {
+  background: transparent;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #555555;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  content: "";
+  display: block;
+  height: 10px;
+  padding: 10px;
+  position: absolute;
+  -webkit-transition: border-color 0.25s;
+  -moz-transition: border-color 0.25s;
+  transition: border-color 0.25s;
+  width: 10px;
+
+  display: none;
+}
+
+.qp-bottom-right {
+  border-radius: 15px 15px 0 15px;
+}
+.phone-tip {
+  clip: rect(8px, 31px, 19px, 20px);
+  right: -10px;
+  bottom: -50px;
+}
 
 // ========================================
 //

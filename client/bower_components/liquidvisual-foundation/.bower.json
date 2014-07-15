@@ -17,11 +17,11 @@
   "devDependencies": {},
   "private": false,
   "homepage": "https://github.com/liquidvisual/liquidvisual-foundation",
-  "_release": "89f3901426",
+  "_release": "4339237c72",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "89f3901426100242f47d6b259f20c6a7f48a4294"
+    "commit": "4339237c728e620cede11914ac75272b2479fa7b"
   },
   "_source": "https://github.com/liquidvisual/liquidvisual-foundation.git",
   "_target": "*",

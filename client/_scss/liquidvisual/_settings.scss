@@ -13,7 +13,7 @@
 // $primary-color: #158DB8; // Override in F5 settings
 // $include-code-styles: true;
 // $include-example-styles: true;
-// $include-form-styles: true;
+$include-form-styles: false;
 $include-hr-styles: false;
 // $include-snap-grid: true;
 
@@ -57,10 +57,11 @@ $hero-height: 700px;
 
 // Captions
 
+// add remove shadows - needed
 // $hero-caption-font-size-small: 0.8em;
-// $hero-caption-font-size-medium: 1em;
+// $hero-caption-font-size-medium: 1rem;
 // $hero-caption-paragraph-font-size: 1.5em;
-// $hero-caption-color: white;
+$hero-caption-color: #333;
 
 // Carousel
 // $hero-carousel-bullet-size: 12px;

@@ -2,7 +2,7 @@
 
 # Order the primary navigation (skip home) : add for dropdown - 'second_level: products'
 primary_navigation:
- - {title: Services, icon: fi-torso-business, url: "#services"}
+ - {title: What We Do, icon: fi-torso-business, url: "#services"}
  - {title: Our Work, icon: fi-monitor, url: "#work"}
  - {title: Blog, icon: fi-pencil, url: "#blog"}
- - {title: Contact, icon: fi-mail, url: "#contact"}
+ - {title: Contact Us, icon: fi-mail, url: "#contact"}

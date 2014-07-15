@@ -1,5 +1,4 @@
 @import "../foundation/settings";
-
 /*
     LIQUIDVISUAL TOPBAR :: SETTINGS 123
 
@@ -50,7 +49,7 @@ $topbar-quaternary-color: #E1E1E1; // Line Color
 // Topbar Background
 
 $topbar-background-small: $topbar-secondary-color; // Colors menu contents on small
-$topbar-background-medium: $topbar-secondary-color; // Colors bar on medium
+$topbar-background-medium: transparent; //$topbar-secondary-color; // Colors bar on medium
 
 // Topbar Header
 
@@ -68,10 +67,11 @@ $topbar-body-max-height: 400px;
 // Anchors
 
 $topbar-anchor-side-padding: 20px;
-$topbar-anchor-font-size-small: 1em;
+$topbar-anchor-font-size-small: 1.1rem;
+// needs font weight
 $topbar-anchor-font-size-medium: inherit;
 $topbar-anchor-color-small: $topbar-tertiary-color;
-$topbar-anchor-color-medium: #222;
+$topbar-anchor-color-medium: white; //#222;
 $topbar-anchor-border-top: 1px solid $topbar-quaternary-color;
 $topbar-divider-border: none; //1px solid $topbar-quaternary-color; /* optional */
 $topbar-dropdown-anchor-border-top: 1px solid $topbar-quaternary-color;
@@ -88,7 +88,7 @@ $topbar-icons-display-for-medium: none;
 $topbar-anchor-background-color-active-small: $topbar-primary-color;
 $topbar-anchor-background-color-active-medium: transparent;
 $topbar-anchor-color-active-small: $topbar-secondary-color;
-$topbar-anchor-color-active-medium: $topbar-primary-color;
+$topbar-anchor-color-active-medium: $primary-color; //$topbar-primary-color;
 
 // Dropdowns
 

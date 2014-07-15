@@ -13,13 +13,13 @@
 	{% for banner in site.data.homepage_banners %}
 		<div class="lv-hero" data-background-image="{% if page.url == '/' or page.url == site.baseurl %}{{ banner.img_path | prepend: site.baseurl }}{% else %}{{ page.banner_img_path | prepend: site.baseurl }}{% endif %}">
 			<div class="row center-vertical">
-				<div class="columns text-center">
+				<div class="large-11 large-centered columns text-center large-text-right">
 					<!-- Caption -->
 					<article class="lv-hero-caption animated text-center">
 						{% if page.url == '/' or page.url == site.baseurl %}
 							<h1>{{ banner.title }}</h1>
 							{% if banner.description %}<p>{{ banner.description }}</p>{% endif %}
-							<p><a class="button round" href="{{ banner.link_url | prepend: site.baseurl }}">{{ banner.link_label }}</a></p>
+							<p><a class="button round flat" href="{{ banner.link_url | prepend: site.baseurl }}"><i class="icon-point-right"></i> {{ banner.link_label }}</a></p>
 						{% else %}
 							<h2>{{ page.banner_title }}</h2>
 						{% endif %}

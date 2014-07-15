@@ -41,13 +41,13 @@
 // Global
 
 // We use these to define default font weights
-$font-weight-normal: normal !default;
-$font-weight-bold: bold !default;
+// $font-weight-normal: normal !default;
+// $font-weight-bold: bold !default;
 
 // We use these to control various global styles
 $body-bg: #fff;
-$body-font-color: #222;
-$body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// $body-font-color: #222;
+// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
@@ -60,12 +60,12 @@ $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #B70F0F;
-$secondary-color: #e7e7e7;
-$alert-color: #f04124;
-// $success-color: #43AC6A;
-// $warning-color: #f08a24;
-// $info-color: #a0d3e8;
+$primary-color: #2C7CBA;
+$secondary-color: #666666;
+$alert-color: #2A3136;
+$success-color: #43AC6A;
+$warning-color: #f08a24;
+$info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
 $global-radius: 10px;
@@ -134,10 +134,10 @@ $xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-$header-font-family: $body-font-family;
+// $header-font-family: $body-font-family;
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
-$header-font-color: #222;
+// $header-font-color: #222;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -161,8 +161,8 @@ $h6-font-reduction: 0 !default;
 
 // These control how subheaders are styled.
 // $subheader-line-height: 1.4;
-$subheader-font-color: scale-color($header-font-color, $lightness: 35%);
-$subheader-font-weight: $font-weight-normal;
+// $subheader-font-color: scale-color($header-font-color, $lightness: 35%);
+// $subheader-font-weight: $font-weight-normal;
 // $subheader-top-margin: .2rem;
 // $subheader-bottom-margin: .5rem;
 
@@ -182,9 +182,9 @@ $subheader-font-weight: $font-weight-normal;
 // $paragraph-text-rendering: optimizeLegibility;
 
 // We use these to style <code> tags
-$code-color: scale-color($alert-color, $lightness: -27%);
+$code-color: #76808B; //scale-color($alert-color, $lightness: -27%);
 // $code-font-family: Consolas, 'Liberation Mono', Courier, monospace;
-$code-font-weight: $font-weight-bold;
+// $code-font-weight: $font-weight-bold;
 
 // We use these to style anchors
 // $anchor-text-decoration: none;
@@ -215,7 +215,7 @@ $code-font-weight: $font-weight-bold;
 // We use these to style blockquotes
 // $blockquote-font-color: scale-color($header-font-color, $lightness: 35%);
 // $blockquote-padding: rem-calc(9 20 0 19);
-$blockquote-border: 1px solid #ddd;
+// $blockquote-border: 1px solid #ddd;
 // $blockquote-cite-font-size: rem-calc(13);
 // $blockquote-cite-font-color: scale-color($header-font-color, $lightness: 23%);
 // $blockquote-cite-link-color: $blockquote-cite-font-color;
@@ -355,7 +355,7 @@ $crumb-slash: "\203A";
 // We use these to build padding for buttons.
 // $button-tny: rem-calc(10);
 // $button-sml: rem-calc(14);
-$button-med: rem-calc(12); //rem-calc(16);
+// $button-med: rem-calc(16);
 // $button-lrg: rem-calc(18);
 
 // We use this to control the display property.
@@ -364,11 +364,11 @@ $button-med: rem-calc(12); //rem-calc(16);
 
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;
-$button-font-color: #987367; //#fff;
+// $button-font-color: #fff;
 // $button-font-color-alt: #333;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
-$button-font-med: rem-calc(20); //rem-calc(16);
+// $button-font-med: rem-calc(16);
 // $button-font-lrg: rem-calc(20);
 // $button-font-weight: $font-weight-normal;
 // $button-font-align: center;
@@ -379,7 +379,7 @@ $button-font-med: rem-calc(20); //rem-calc(16);
 // We use these to control button border styles.
 // $button-border-width: 0px;
 // $button-border-style: solid;
-$button-bg: #987367; //$primary-color;
+// $button-bg: $primary-color;
 // $button-border-color: scale-color($bg, $lightness: $button-function-factor);
 
 // We use this to set the default radius used throughout the core.
@@ -387,7 +387,7 @@ $button-bg: #987367; //$primary-color;
 // $button-round: $global-rounded;
 
 // We use this to set default opacity for disabled buttons.
-// $button-disabled-opacity: 0.7;
+$button-disabled-opacity: 0.5;
 
 // Button Groups
 
@@ -1100,24 +1100,24 @@ $label-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 
 // These control the background color for the table and even rows
 // $table-bg: #fff;
-// $table-even-row-bg: #f9f9f9  ;
+// $table-even-row-bg: #f9f9f9;
 
 // These control the table cell border style
 // $table-border-style: solid;
-// $table-border-size: 1px;
-// $table-border-color: #ddd;
+$table-border-size: 0px;
+$table-border-color: transparent;// #ddd;
 
 // These control the table head styles
-// $table-head-bg: #f5f5f5  ;
+$table-head-bg: none; //#f5f5f5;
 // $table-head-font-size: rem-calc(14);
-// $table-head-font-color: #222;
+$table-head-font-color: #555;
 // $table-head-font-weight: $font-weight-bold;
 // $table-head-padding: rem-calc(8 10 10);
 
 // These control the row padding and font styles
 // $table-row-padding: rem-calc(9 10);
 // $table-row-font-size: rem-calc(14);
-// $table-row-font-color: #222;
+$table-row-font-color: #555;
 // $table-line-height: rem-calc(18);
 
 // These are for controlling the display and margin of tables
@@ -1154,7 +1154,7 @@ $label-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $thumb-border-style: solid;
 // $thumb-border-width: 4px;
 // $thumb-border-color: #fff;
-$thumb-box-shadow: 0 0 0 1px rgba(#000,.2); //0 0 0 1px rgba(#000,.2)
+// $thumb-box-shadow: 0 0 0 1px rgba(#000,.2)
 $thumb-box-shadow-hover: 0 0 0 1px rgba(#000,.2); //0 0 6px 1px rgba($primary-color,0.5);
 
 // Radius and transition speed for thumbs
