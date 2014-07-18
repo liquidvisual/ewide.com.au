@@ -44,6 +44,39 @@ $(document).ready(function() {
  //      });
 });
 
+//----------------------------------------------------------------
+// Form Submission
+//----------------------------------------------------------------
+
+$("#contact").on("valid invalid submit", function(e){
+    var form = $(this);
+    e.stopPropagation();
+    e.preventDefault();
+
+    if (e.type === "valid"){
+
+        $('.contact-submit').addClass('disabled');
+        NProgress.start();
+
+        $.ajax({
+                    type: 'POST',
+                    url: form.attr('action'),
+                    data: form.serialize(),
+                    cache: false,
+                    success: function(feedback){
+                        //alert(form.serialize());
+                        //$('form input, form textarea').prop('disabled', true); // disable the form
+                        //$('.checkbox, .radio').removeClass("checked"); // wipe the ticks
+                        form[0].reset(); // wipe the form data
+                        NProgress.done();
+                        $('.contact-form-default').addClass('hide');
+                        $('.contact-form-feedback').removeClass('hide');
+                        //alert("Thanks for your message!");
+            } // success
+        }); // ajax
+    } // valid
+});
+
 //-----------------------------------------------------------------
 // setupHero
 //-----------------------------------------------------------------
@@ -131,6 +164,25 @@ function setupHero(){
 	}
 	//if (bxCarousel) bxCarousel.destroySlider();
 }
+
+//----------------------------------------------------------------
+// ScrollTo Plugin
+//----------------------------------------------------------------
+
+// make it only work on desktops - not mobile
+
+$('.navigation a, .logo, .banner .button').click(function(e) {
+    e.preventDefault();
+
+    var id = $(this).attr('href');
+
+    if (id == '/') {
+        $.scrollTo(0, 300);
+    } else {
+        $.scrollTo($(id).offset().top-60, 300);
+    }
+    return false;
+});
 
 //-----------------------------------------------------------------
 // +++ HELPERS +++
