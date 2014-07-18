@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="columns">
 			<label><!-- Your name <small>required</small> -->
-				<input class="radius" type="text" placeholder="Your name*" required pattern="[a-zA-Z]+">
+				<input name="name" class="radius" type="text" placeholder="Your name*">
 			</label>
 			<small class="error">Your name is required.</small>
 		</div>
@@ -12,7 +12,7 @@
 	<div class="row">
 		<div class="columns">
 			<label><!-- Email <small>required</small> -->
-				<input class="radius" type="email" placeholder="Email*" required>
+				<input name="email" class="radius" type="email" placeholder="Email*" required>
 			</label>
 			<small class="error">A valid email address is required.</small>
 		</div>
@@ -21,7 +21,7 @@
 	<div class="row">
 		<div class="columns">
 			<label><!-- Phone -->
-				<input class="radius" type="text" placeholder="Phone (optional)">
+				<input name="phone" class="radius" type="text" placeholder="Phone (optional)">
 			</label>
 			<small class="error">Please try again.</small>
 		</div>
@@ -30,7 +30,7 @@
 	<div class="row">
 		<div class="columns">
 			<label><!-- Budget <small>required</small> -->
-				<select class="medium radius">
+				<select name="budget" class="medium radius">
 					<option value="">Budget</option>
 					<option value="1000-2500">$1000 - $2500</option>
 					<option value="2500-5000">$2500 - $5000</option>
